@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card, { CardType } from './components/Card';
 import UserList from './components/UserList';
+import { IUser } from './types/types';
+import axios from 'axios';
 
 const App = () => {
-  const users = [
-    { id: 1, name: 'Yarok', email: 'test@test.test', address: { street: 'Shevchenko', city: 'Ternopil', zipcode: '48231' } },
-    { id: 2, name: 'Kolya', email: 'test@test.test', address: { street: 'Tsechova', city: 'Husiatyn', zipcode: '48201' } },
-  ];
+  const [users, setUsers] = useState<IUser[]>([]);
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
+  async function getUsers() {
+    try {
+      const response = await axios.get<IUser[]>('https://jsonplaceholder.typicode.com/users');
+      setUsers(response.data);
+    } catch (e) {
+      console.log(e);
+      alert(e);
+    }
+  }
+
   return (
     <div>
       <Card type={CardType.outlined} width='200px' height='200px' onClick={(num: number) => console.log('was click', num)}>
