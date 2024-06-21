@@ -5,7 +5,7 @@ import List from '../components/List';
 import TodoItem from '../components/TodoItem';
 
 const TodoPage: FC = () => {
-    const [todo, setTodo] = useState<ITodo[]>([]);
+    const [todos, setTodos] = useState<ITodo[]>([]);
 
     useEffect(() => {
       getTodos();
@@ -14,7 +14,7 @@ const TodoPage: FC = () => {
     async function getTodos() {
       try {
         const response = await axios.get<ITodo[]>('https://jsonplaceholder.typicode.com/todos?_limit=10');
-        setTodo(response.data);
+        setTodos(response.data);
       } catch (e) {
         console.log(e);
         alert(e);
@@ -24,7 +24,7 @@ const TodoPage: FC = () => {
     return (
         <div>
             <List
-                items={todo}
+                items={todos}
                 renderItem={(todo: ITodo) => <TodoItem todo={todo} key={todo.id} />}
             />
         </div>
