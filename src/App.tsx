@@ -7,6 +7,7 @@ import Navbar from './components/navbar/Navbar';
 import UserItemPage from './pages/UserItemPage';
 import TodoItemPage from './pages/TodoItemPage';
 import ReduxPage from './pages/ReduxPage/ReduxPage';
+import './App.css'
 
 const App = () => {
 
