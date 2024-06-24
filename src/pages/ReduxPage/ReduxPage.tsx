@@ -6,7 +6,7 @@ const ReduxPage: FC = () => {
     const [balance, setBalance] = useState<number>(0);
 
     return (
-        <div className='container'>
+        <div className='redux-page-container'>
             <Counter counter={balance} btnOne='Add' btnTwo='Get'/>
         </div>
     );
