@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar: FC = () => {
     return (
@@ -13,6 +14,9 @@ const Navbar: FC = () => {
                 </li>
                 <li>
                     <Link to="/trash">Trash</Link>
+                </li>
+                <li>
+                    <Link to="/redux">Redux</Link>
                 </li>
             </ul>
         </nav>
