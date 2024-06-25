@@ -1,10 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { cashReducer } from './reducers/cashReducer';
-import { customersReducer } from './reducers/customersReducer';
+import { cashReducer } from './store/cashReducer';
+import { customersReducer } from './store/customersReducer';
 
 const rootReducer = combineReducers({
-  cash: cashReducer,
-  customers: customersReducer,
+  cashReducer,
+  customersReducer,
 });
 
 const store = configureStore({

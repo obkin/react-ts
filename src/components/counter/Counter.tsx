@@ -11,7 +11,7 @@ interface ICounter {
 
 const Counter: FC<ICounter> = ({ btnOne, btnTwo }) => {
     const dispatch = useDispatch();
-    const cash = useSelector((state: any) => state.cash.cash);
+    const cash = useSelector((state: any) => state.cashReducer.cash);
     
     const handleAddCash = () => {
         const amountStr = prompt('Введіть суму для додавання:') || '0';
