@@ -1,7 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
-import { IUser } from '../types/types';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+import { IUser } from '../../types/types';
+import './UserItemPage.css';
 
 const UserItemPage: FC = () => {
     const [user, setUser] = useState<IUser | null>(null);
@@ -23,7 +24,7 @@ const UserItemPage: FC = () => {
       }
 
     return (
-        <div>
+        <div className='user-item-container'>
             {user ? (
                 <div>
                     <h1>Page of {user.name}</h1>

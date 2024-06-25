@@ -1,7 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
-import { ITodo } from '../types/types';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+import { ITodo } from '../../types/types';
+import './TodoItemPage.css'
 
 const TodoItemPage: FC = () => {
     const [todo, setTodo] = useState<ITodo | null>(null);
@@ -23,7 +24,7 @@ const TodoItemPage: FC = () => {
     }
 
     return (
-        <div>
+        <div className='todo-item-container'>
             {todo ? (
                 <h1>{todo.id} | {todo.title} | {todo.completed ? 'completed' : 'not completed'}</h1>
             ) : (

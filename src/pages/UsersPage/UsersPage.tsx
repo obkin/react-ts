@@ -1,8 +1,9 @@
 import React, { FC, useEffect, useState } from 'react';
-import { IUser } from '../types/types';
 import axios from 'axios';
-import List from '../components/List';
-import UserItem from '../components/UserItem';
+import { IUser } from '../../types/types';
+import UserItem from '../../components/UserItem';
+import List from '../../components/List';
+import './UsersPage.css';
 
 const UserPage: FC = () => {
     const [users, setUsers] = useState<IUser[]>([]);
@@ -22,7 +23,7 @@ const UserPage: FC = () => {
       }
 
     return (
-        <div>
+        <div className='users-container'>
             <List 
                 items={users} 
                 renderItem={(user: IUser) => <UserItem user={user} key={user.id} />} 

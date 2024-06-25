@@ -1,8 +1,9 @@
 import axios from 'axios';
-import { ITodo } from '../types/types';
+import { ITodo } from '../../types/types';
 import React, { FC, useEffect, useState } from 'react';
-import List from '../components/List';
-import TodoItem from '../components/TodoItem';
+import List from '../../components/List';
+import TodoItem from '../../components/TodoItem';
+import './TodosPage.css'
 
 const TodoPage: FC = () => {
     const [todos, setTodos] = useState<ITodo[]>([]);
@@ -22,7 +23,7 @@ const TodoPage: FC = () => {
     }
     
     return (
-        <div>
+        <div className='todos-container'>
             <List
                 items={todos}
                 renderItem={(todo: ITodo) => <TodoItem todo={todo} key={todo.id} />}
