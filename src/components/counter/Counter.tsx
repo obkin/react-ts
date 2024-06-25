@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import ButtonA from '../buttons/btn-A/ButtonA';
 import './Counter.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { addCash, getCash } from '../../redux/actions';
+import { addCashAction, getCashAction } from '../../redux/store/cashReducer';
 
 interface ICounter {
     btnOne: string;
@@ -17,7 +17,7 @@ const Counter: FC<ICounter> = ({ btnOne, btnTwo }) => {
         const amountStr = prompt('Введіть суму для додавання:') || '0';
         const amount = parseInt(amountStr, 10);
         if (!isNaN(amount)) {
-            dispatch(addCash(amount));
+            dispatch(addCashAction(amount));
         } else {
             alert('Невірний формат числа!');
         }
@@ -27,7 +27,7 @@ const Counter: FC<ICounter> = ({ btnOne, btnTwo }) => {
         const amountStr = prompt('Введіть суму для зняття:') || '0';
         const amount = parseInt(amountStr, 10);
         if (!isNaN(amount)) {
-            dispatch(getCash(amount));
+            dispatch(getCashAction(amount));
         } else {
             alert('Невірний формат числа!');
         }
