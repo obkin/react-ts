@@ -1,6 +1,8 @@
+import { ICustomer } from "./customersReducer";
+
 interface IDefaultStates {
     cash: number;
-    customers: [];
+    customers: ICustomer[];
 }
 
 export const defaultStates: IDefaultStates = {

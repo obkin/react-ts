@@ -1,7 +1,7 @@
 import { defaultStates } from "./defaultStates";
 
-export const ADD_CASH = 'ADD_CASH';
-export const GET_CASH = 'GET_CASH';
+const ADD_CASH = 'ADD_CASH';
+const GET_CASH = 'GET_CASH';
 
 export const cashReducer = (state = defaultStates, action: any) => {
   switch (action.type) {
